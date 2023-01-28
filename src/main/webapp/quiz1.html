@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+function fn_process(){
+
+	var answer = $("#movieName").val();
+	
+	$.ajax({
+		type : "post",
+		async : true,
+		url : "http://localhost:8080/movie/quiz",
+		dataType :"text",
+		data : { answer : answer},
+		success : function(data, textStatus){
+			if(data == 'correct'){
+				$('#message').text("정답입니다.");
+			}else{
+				$('#message').text("틀렸습니다.");
+			}
+		}
+	})
+
+}
+</script>
+<title>퀴즈1</title>
+</head>
+<body>
+<img src = "image/common.jpg" width="400"><br>
+영화의 제목은<input type="text" id = "movieName" /><br>
+<input type = "button" value = "전송" onclick="fn_process()"/><br><br>
+<div id = "message"></div>
+</body>
+</html>
