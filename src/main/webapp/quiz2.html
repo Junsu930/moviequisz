@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+function fn_process(){
+
+	var answer1 = $("#movieName2").val();
+	
+	if (answer1 == '이터널 선샤인' || answer1 == '이터널선샤인'){
+		$('#message').text("정답입니다.");
+		
+		
+	} else{
+		$('#message').text("틀렸습니다.");
+	}
+
+}
+</script>
+<title>퀴즈2</title>
+</head>
+<body>
+<form action = "movie" method = "post">
+<img src = "image/eternal.jpg" width="400"><br>
+영화의 제목은<input type="text" id = "movieName2" /><br>
+<input type = "button" value = "전송" onclick="fn_process()"/><br><br>
+<div id = "message"></div>
+</form>
+</body>
+</html>

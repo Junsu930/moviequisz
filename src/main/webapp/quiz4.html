@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+function fn_process(){
+
+	var answer1 = $("#movieName4").val();
+	
+	if (answer1 == '인생은 아름다워' || answer1 == '인생은아름다워'){
+		$('#message').text("정답입니다.");
+		
+		
+	} else{
+		$('#message').text("틀렸습니다.");
+	}
+
+}
+</script>
+<title>퀴즈4</title>
+</head>
+<body>
+<form action = "movie" method = "post">
+<img src = "image/life.jpg" width="400"><br>
+영화의 제목은<input type="text" id = "movieName4" /><br>
+<input type = "button" value = "전송" onclick="fn_process()"/><br><br>
+<div id = "message"></div>
+</form>
+</body>
+</html>
